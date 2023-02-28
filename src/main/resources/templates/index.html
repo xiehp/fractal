@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="UTF-8">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>aaa</title>
+
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        <span th:text="${hello}">Hello!</span><br />
+        <a href="/">index</a><br />
+        <a href="/begin">begin</a><br />
+        <a href="/stop">stop</a><br />
+        <a href="/status">status</a><br />
+        <a href="/status">status</a><br />
+        isRunning: <span th:text="${@loop?.isRunning}">isRunning</span><br />
+        <!-- count: <span th:text="${count}">count</span><br /> -->
+        count: <span th:text="${@world.count}">count</span><br />
+        Warehouse: <span th:text="${@world.warehouse}">count</span><br />
+        <!-- loop: <span th:text="${@loop}">${loop}</span><br />
+        world: <span th:text="${@world}">${world}</span><br /> -->
+    </p>
+
+    <div>
+        <div>
+            <span>Select Object</span><br />
+            <select id="selectObject" name="selectObject">
+                <option value="value" th:each="key : ${jpaMapping.keySet()}" th:text="${key}">key</option>
+            </select><br />
+            <span>Select Type</span><br />
+            <select id="selectObject" name="selectObject">
+                <option value="value" th:each="key : ${jpaMapping.keySet()}" th:text="${key}">key</option>
+            </select>
+        </div>
+        <div>
+            <span>Action</span><br />
+            <a href="/action/add">add</a><br />
+        </div>
+
+    </div>
+
+    <div style="margin-top: 20px;">
+        获取DB数据<br />
+        <a href="db/jdbc" target="_blank">db/jdbc</a><br />
+        <a href="db/jpa" target="_blank">db/jpa</a><br />
+        <a href="db/jooq" target="_blank">db/jooq</a><br />
+        <a href="db/create" target="_blank">db/create</a><br />
+        <a href="db/update" target="_blank">db/update</a><br />
+        <a href="db/readExcel" target="_blank">db/readExcel</a><br />
+        <a href="db/exportExcel" target="_blank">db/exportExcel</a><br />
+        <a href="db/exportExcel2" target="_blank">db/exportExcel2</a><br />
+        <a href="db/exportExcelJpa" target="_blank">db/exportExcelJpa</a><br />
+        <a href="db/exportExcelJooq" target="_blank">db/exportExcelJooq</a><br />
+        <a href="db/initDb" target="_blank">db/initDb</a><br />
+
+        <a href="action/getObjTempleteData" target="_blank">action/getObjTempleteData</a><br />
+    </div>
+
+    <table th:each="keyName : ${objTempleteData.templeteMap.keySet()}" style="border: 1px;">
+
+        <caption>模板数据 (<span th:text="${keyName + ' ' + objTempleteData.templeteMap.get(keyName).size()}" />)</caption>
+        <th>
+            <td>type</td>
+            <td>type</td>
+            <td>all</td>
+        </th><QAX></QAX>
+        <tr th:each="templeteMap : ${objTempleteData.templeteMap.get(keyName).values()}">
+            <td>
+                <div th:text="${keyName}"></div>
+                <div th:text="${templeteMap.type}"></div>
+                <div th:text="${templeteMap.toString()}"></div>
+            </td>
+            <!-- <td th:each="key : ${people.keys}" th:text="${people[key]}">type</td> -->
+        </tr>
+    </table>
+
+    <table style="border: 1px;">
+        <caption>world.peopleList (<span th:text="${world.peopleList.size()}" />)</caption>
+        <th>
+        <td th:each="fieldName : listKeys"></td>
+        </th>
+        <tr th:each="people : ${peopleList}">
+            <td th:text="${people.name}"></td>
+            <td th:text="${people.type}"></td>
+            <td th:text="${people.toString()}"></td>
+            <!-- <td th:each="key : ${people.keys}" th:text="${people[key]}">type</td> -->
+        </tr>
+    </table>
+
+    <table>
+        <caption>world.resourcesList (<span th:text="${world.resourcesList.size()}" />)</caption>
+        <th>
+        <td th:each="fieldName : listKeys"></td>
+        </th>
+        <tr th:each="resources : ${world.resourcesList}">
+            <td th:text="${resources.name}"></td>
+            <td th:text="${resources.type}"></td>
+            <td th:text="${resources}"></td>
+            <!-- <td th:each="key : ${people.keys}" th:text="${people[key]}">type</td> -->
+        </tr>
+    </table>
+
+    <table>
+        <caption>world.resourcesList (<span th:text="${world.resourcesList.size()}" />)</caption>
+        <th>
+        <td th:each="fieldName : listKeys"></td>
+        </th>
+        <tr th:each="resources : ${world.resourcesList}">
+            <td th:text="${resources.name}"></td>
+            <td th:text="${resources.type}"></td>
+            <td th:text="${resources}"></td>
+            <!-- <td th:each="key : ${people.keys}" th:text="${people[key]}">type</td> -->
+        </tr>
+    </table>
+</body>
+
+</html>

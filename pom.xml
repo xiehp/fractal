@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>xie</groupId>
+	<artifactId>x-fractal</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<name>X Fractal</name>
+	<description>Spring Boot Project for Fractal</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.0.0</version>
+	</parent>
+
+	<properties>
+		<java.version>17</java.version>
+		<repackage.classifier />
+		<spring-native.version>0.11.5</spring-native.version>
+
+		<!-- spring.boot版本 -->
+		<spring.boot.version>3.0.0</spring.boot.version>
+		<!-- springbootadmin版本 -->
+		<spring.boot.admin.version>3.0.0-M5</spring.boot.admin.version>
+	</properties>
+
+
+	<!--(you only need this if you are using a milestone or snapshot version) -->
+	<!--
+	<repositories>
+		<repository>
+			<id>spring-snapshots</id>
+			<url>https://repo.spring.io/snapshot</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>spring-milestones</id>
+			<url>https://repo.spring.io/milestone</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>spring-snapshots</id>
+			<url>https://repo.spring.io/snapshot</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>spring-milestones</id>
+			<url>https://repo.spring.io/milestone</url>
+		</pluginRepository>
+	</pluginRepositories>
+	-->
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.googlecode.log4jdbc</groupId>
+			<artifactId>log4jdbc</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jooq</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-websocket</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.session</groupId>
+			<artifactId>spring-session-core</artifactId>
+		</dependency>
+
+
+		<!-- ### Spring相关第三方库或工具 ### -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-registry-prometheus</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- <dependency>
+			<groupId>org.springframework.experimental</groupId>
+			<artifactId>spring-native</artifactId>
+			<version>${spring-native.version}</version>
+		</dependency> -->
+		<!-- Spring admin client -->
+		<dependency>
+			<groupId>de.codecentric</groupId>
+			<artifactId>spring-boot-admin-starter-client</artifactId>
+			<version>${spring.boot.admin.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<!-- Spring升级check工具 -->
+		<!-- <dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-properties-migrator</artifactId>
+			<scope>runtime</scope>
+		</dependency> -->
+
+		<!-- 非Spring第三方库 项目相关库-->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jooq</groupId>
+			<artifactId>jooq-codegen</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.jooq</groupId>
+			<artifactId>jooq-meta</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.jooq</groupId>
+			<artifactId>jooq</artifactId>
+		</dependency>
+
+
+		<!-- 非Spring第三方库 工具库-->
+		<dependency>
+			<groupId>cn.hutool</groupId>
+			<artifactId>hutool-all</artifactId>
+			<version>5.3.10</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>31.1-jre</version>
+		</dependency>
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.10.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>5.2.3</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</exclude>
+					</excludes>
+					<classifier>${repackage.classifier}</classifier>
+					<image>
+						<builder>paketobuildpacks/builder:tiny</builder>
+						<env>
+							<BP_NATIVE_IMAGE>true</BP_NATIVE_IMAGE>
+						</env>
+					</image>
+				</configuration>
+			</plugin>
+			<!-- 
+			<plugin>
+				<groupId>org.springframework.experimental</groupId>
+				<artifactId>spring-aot-maven-plugin</artifactId>
+				<version>${spring-native.version}</version>
+				<executions>
+					<execution>
+						<id>test-generate</id>
+						<goals>
+							<goal>test-generate</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>generate</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			-->
+			<plugin>
+				<groupId>org.hibernate.orm.tooling</groupId>
+				<artifactId>hibernate-enhance-maven-plugin</artifactId>
+				<!-- <version>${hibernate.version}</version> -->
+				<executions>
+					<execution>
+						<id>enhance</id>
+						<goals>
+							<goal>enhance</goal>
+						</goals>
+						<configuration>
+							<failOnError>true</failOnError>
+							<enableLazyInitialization>true</enableLazyInitialization>
+							<enableDirtyTracking>true</enableDirtyTracking>
+							<enableAssociationManagement>true</enableAssociationManagement>
+							<enableExtendedEnhancement>false</enableExtendedEnhancement>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+
+	<profiles>
+		<profile>
+			<id>native</id>
+			<properties>
+				<repackage.classifier>exec</repackage.classifier>
+				<native-buildtools.version>0.9.11</native-buildtools.version>
+			</properties>
+			<dependencies>
+				<dependency>
+					<groupId>org.junit.platform</groupId>
+					<artifactId>junit-platform-launcher</artifactId>
+					<scope>test</scope>
+				</dependency>
+			</dependencies>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.graalvm.buildtools</groupId>
+						<artifactId>native-maven-plugin</artifactId>
+						<version>${native-buildtools.version}</version>
+						<extensions>true</extensions>
+						<executions>
+							<execution>
+								<id>test-native</id>
+								<phase>test</phase>
+								<goals>
+									<goal>test</goal>
+								</goals>
+							</execution>
+							<execution>
+								<id>build-native</id>
+								<phase>package</phase>
+								<goals>
+									<goal>build</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+</project>
